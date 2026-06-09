@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Système de Vote Électronique - MIAGE Casa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🗳️ Élection du Délégué de Promotion</h1>
+    <nav>
+      <button id="btnCandidats" class="active">Candidats</button>
+      <button id="btnResultats">Résultats</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section des messages -->
+    <div id="message" class="message hidden"></div>
+
+    <!-- Modal de vote -->
+    <div id="voteModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Confirmer votre vote</h2>
+        <p>Vous votez pour : <strong id="candidateName"></strong></p>
+        <input type="text" id="candidateMatricule" placeholder="Numéro de matricule du candidat" required>
+        <input type="text" id="studentId" placeholder="Votre identifiant étudiant" required>
+        <div class="modal-actions">
+          <button id="confirmVote" class="btn-confirm">Confirmer</button>
+          <button id="cancelVote" class="btn-cancel">Annuler</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Candidats -->
+    <section id="candidatsSection">
+      <h2>Liste des candidats</h2>
+      <div id="candidatesContainer" class="cards-container">
+        <div class="candidate-card">
+          <img src="photos/photos/arnaud.jpg" alt="Arnaud">
+          <h3>Arnaud</h3>
+          <p class="candidate-matricule">Matricule : MIAGE-001</p>
+          <p>Amélioration de la cantine et des activités parascolaires</p>
+          <button class="btn-vote" data-id="1" data-name="Arnaud" data-matricule="MIAGE-001">Voter pour ce candidat</button>
+        </div>
+        <div class="candidate-card">
+          <img src="photos/photos/fatima.jpg" alt="Fatima">
+          <h3>Fatima</h3>
+          <p class="candidate-matricule">Matricule : MIAGE-002</p>
+          <p>Modernisation de la bibliothèque et soutien scolaire</p>
+          <button class="btn-vote" data-id="2" data-name="Fatima" data-matricule="MIAGE-002">Voter pour ce candidat</button>
+        </div>
+        <div class="candidate-card">
+          <img src="photos/photos/claude.jpg" alt="Claude">
+          <h3>Claude</h3>
+          <p class="candidate-matricule">Matricule : MIAGE-003</p>
+          <p>Organisation d'événements et sorties culturelles</p>
+          <button class="btn-vote" data-id="3" data-name="Claude" data-matricule="MIAGE-003">Voter pour ce candidat</button>
+        </div>
+        <div class="candidate-card">
+          <img src="photos/photos/rachel.jpg" alt="Rachel">
+          <h3>Rachel</h3>
+          <p class="candidate-matricule">Matricule : MIAGE-004</p>
+          <p>Développement du sport et bien-être étudiant</p>
+          <button class="btn-vote" data-id="4" data-name="Rachel" data-matricule="MIAGE-004">Voter pour ce candidat</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Résultats -->
+    <section id="resultatsSection" class="hidden">
+      <h2>Résultats du scrutin</h2>
+      <div id="resultsContainer"></div>
+      <button id="refreshResults" class="btn-refresh">🔄 Actualiser</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
